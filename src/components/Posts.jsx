@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Post from "./Post";
 import AddPost from "./AddPost";
+import { PostsContext } from "../providers/PostsProvider";
 
-const Posts = ({ posts, onCreate }) => {
+/* eslint-disable */
+const Posts = ({ onCreate }) => {
+  const posts = useContext(PostsContext);
+
   return (
     <section className="Posts">
       <AddPost onCreate={onCreate} />
@@ -12,5 +16,5 @@ const Posts = ({ posts, onCreate }) => {
     </section>
   );
 };
-
+/* eslint-enable */
 export default Posts;
